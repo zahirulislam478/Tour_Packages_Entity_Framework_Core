@@ -1,0 +1,70 @@
+﻿@model Booking
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container">
+    <div class="row justify-content-center" style="margin-top: 40px;">
+        <div class="col-12">
+            <form asp-action="Create" asp-controller="Bookings" method="post" class="needs-validation">
+                <h3 class="d-flex justify-content-center mb-3"><u>Add new Booking</u></h3>
+                <input type="hidden" asp-for="TourPackageId" value="@ViewBag.TourPackageId" />
+
+                <div class="form-group row mb-1 offset-2">
+                    <label class="col-form-label col-2" asp-for="TravelerName"></label>
+                    <div class="col-6">
+                        <input asp-for="TravelerName" class="form-control" />
+                        <span asp-validation-for="TravelerName" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row mb-1 offset-2">
+                    <label class="col-form-label col-2" asp-for="PhoneNumber"></label>
+                    <div class="col-6">
+                        <input asp-for="PhoneNumber" class="form-control" />
+                        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row mb-1 offset-2">
+                    <label class="col-form-label col-2" asp-for="NumberOfTravelers"></label>
+                    <div class="col-6">
+                        <input asp-for="NumberOfTravelers" class="form-control" />
+                        <span asp-validation-for="NumberOfTravelers" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row mb-1 offset-2">
+                    <label class="col-form-label col-2" asp-for="BookingDate"></label>
+                    <div class="col-6">
+                        <input type="date" asp-for="BookingDate" class="form-control" />
+                        <span asp-validation-for="BookingDate" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row mb-1 offset-2">
+                    <label class="col-form-label col-2" asp-for="BookingStatus"></label>
+                    <div class="col-6">
+                        <input asp-for="BookingStatus" class="form-control" />
+                        <span asp-validation-for="BookingStatus" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row mt-2 offset-2">
+                    <div class="col-8">
+                        <div class="d-flex justify-content-between">
+                            <a asp-action="Index" asp-controller="TourPackages" class="btn btn-secondary"><i class="bi bi-arrow-return-left"> Back to index</i></a>
+                            <button type="submit" class="btn btn-primary"><i class="bi bi-save"> Save</i></button>
+                        </div>
+                   </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@section scripts
+    {
+    <script src="~/libs/jquery/jquery.js"></script>
+    <script src="~/libs/validate/jquery.validate.js"></script>
+    <script src="~/libs/validate/jquery.validate.unobtrusive.js"></script>
+}

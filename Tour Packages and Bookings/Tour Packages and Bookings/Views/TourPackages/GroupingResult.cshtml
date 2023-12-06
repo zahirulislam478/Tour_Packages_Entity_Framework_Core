@@ -1,0 +1,74 @@
+﻿@model IEnumerable<GroupedData>
+
+@{
+    ViewData["Title"] = "GroupingResult";
+}
+
+<div class="row">
+    <div class="col-12">
+        <h3 class="d-flex justify-content-center mt-3"><u>Result</u></h3>
+        <table class="table table-bordered table-center">
+            <thead>
+                <tr>
+                    <th>Key</th>
+                    <th>Data</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var x in Model)
+                {
+                    <tr>
+                        <td>
+                            @x.Key
+                        </td>
+                        <td>
+                            <table class="table table-bordered sub-table">
+                                <thead>
+                                    <tr>
+                                        <th>BookingDate</th>
+                                        <th>NumberOfTravelers</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var s in x.Data)
+                                    {
+                                        <tr>
+                                            <td>@s.BookingDate?.ToString("yyyy-MM-dd")</td>
+                                            <td>@s.NumberOfTravelers</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+@section styles
+{
+    <link href="~/wwwroot/libs/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <style>
+        h3 {
+            margin-bottom: 20px;
+        }
+        .table-center {
+            text-align: center;
+        }
+
+        .table-bordered {
+            border: 2px solid #ddd;
+        }
+
+            .table-bordered th, .table-bordered td {
+                padding: 8px;
+            }
+
+        .sub-table {
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+}
+

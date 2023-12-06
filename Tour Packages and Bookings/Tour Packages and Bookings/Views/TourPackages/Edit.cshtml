@@ -1,0 +1,87 @@
+﻿@model TourPackageEditModel
+@{
+    ViewData["Title"] = "Edit";
+}
+<div class="row">
+    <div class="col-12 mt-5">
+        <form asp-action="Edit" asp-controller="TourPackages" method="post" enctype="multipart/form-data">
+            <h3 class="d-flex justify-content-center mb-3"><u>Edit TourPackage</u></h3>
+            <input type="hidden" asp-for="TourPackageId" />
+            <div class="form-group row mb-1 offset-2">
+                <label asp-for="PackageName" class="col-form-label col-2"></label>
+                <div class="col-6">
+                    <input asp-for="PackageName" class="form-control form-control-sm" />
+                    <span asp-validation-for="PackageName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row mb-1 offset-2">
+                <label asp-for="PackageType" class="col-form-label col-2"></label>
+                <div class="col-6">
+                    <select asp-for="PackageType" class="form-select form-select-sm" asp-items="@Html.GetEnumSelectList<PackageType>()">
+                        <option value="" selected>Select one</option>
+                    </select>
+                    <span asp-validation-for="PackageType" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row mb-1 offset-2">
+                <label asp-for="Price" class="col-form-label col-2"></label>
+                <div class="col-6">
+                    <input asp-for="Price" class="form-control form-control-sm" />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row mb-1 offset-2">
+                <label asp-for="Description" class="col-form-label col-2"></label>
+                <div class="col-6">
+                    <input asp-for="Description" class="form-control form-control-sm" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row mb-1 offset-2">
+                <label asp-for="Destinations" class="col-form-label col-2"></label>
+                <div class="col-6">
+                    <input asp-for="Destinations" class="form-control form-control-sm" />
+                    <span asp-validation-for="Destinations" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row mb-1 offset-2">
+                <label asp-for="Duration" class="col-form-label col-2"></label>
+                <div class="col-6">
+                    <input asp-for="Duration" class="form-control form-control-sm" />
+                    <span asp-validation-for="Duration" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row mb-1 offset-2">
+                <label asp-for="Picture" class="col-form-label col-2"></label>
+                <div class="col-6">
+                    <input type="file" asp-for="Picture" class="form-control form-control-sm" />
+                    <span asp-validation-for="Picture" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row mb-1 offset-4">
+                <div class="col-6">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" asp-for="IsActive">
+                        <label class="form-check-label">
+                            Is Active?
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row mb-1 offset-2">
+                <div class="col-8">
+                    <div class="d-flex justify-content-between">
+                        <button class="btn btn-secondary"><a asp-action="Index" asp-controller="TourPackages" style="color:white; text-decoration:none;">Back to Home</a></button>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+@section scripts
+    {
+    <script src="~/libs/jquery/jquery.js"></script>
+    <script src="~/libs/validate/jquery.validate.js"></script>
+    <script src="~/libs/validate/jquery.validate.unobtrusive.js"></script>
+}

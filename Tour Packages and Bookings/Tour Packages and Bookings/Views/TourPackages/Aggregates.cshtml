@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Booking>
+@{
+    ViewData["Title"] = "Aggregates";
+}
+
+@{
+    int totalCount = Model.Count();
+    int minTravelers = Model.Min(x => x.NumberOfTravelers);
+    int maxTravelers = Model.Max(x => x.NumberOfTravelers);
+    int totalTravelers = Model.Sum(x => x.NumberOfTravelers);
+    decimal totalPrice = Model.Sum(x => x.NumberOfTravelers * x.TourPackage?.Price ?? 0);
+    double averageTravelers = Model.Average(x => x.NumberOfTravelers);
+    decimal averageTotalValue = Model.Average(x => (decimal)(x.NumberOfTravelers * (x.TourPackage?.Price ?? 0)));
+}
+
+<div class="row">
+    <div class="col-12">
+        <h3 style="text-align:center" class="mt-2 mbb"><u>Aggregate Information</u></h3>
+        <table class="table table-bordered">
+            <thead style="text-align:center">
+                <tr>
+                    <th>Function</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Count</td>
+                    <td>@totalCount</td>
+                </tr>
+                <tr>
+                    <td>Min (trabs)</td>
+                    <td>@minTravelers</td>
+                </tr>
+                <tr>
+                    <td>Max (trabs)</td>
+                    <td>@maxTravelers</td>
+                </tr>
+                <tr>
+                    <td>Sum (trabs, price)</td>
+                    <td>@totalTravelers, Total Value: @totalPrice.ToString("0.00")</td>
+                </tr>
+                <tr>
+                    <td>Avg (trabs, price)</td>
+                    <td>@averageTravelers.ToString("0.00"), Average Cost: @averageTotalValue.ToString("0.00")</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+@section styles{
+    <link href="~/wwwroot/libs/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <style>
+        .mbb{
+            margin-top:30px;
+            margin-bottom:30px;
+        }
+    </style>
+}
+
+

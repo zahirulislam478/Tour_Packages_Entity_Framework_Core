@@ -1,0 +1,162 @@
+﻿@using X.PagedList.Mvc.Core;
+@using X.PagedList;
+@using X.PagedList.Web.Common;
+@model IEnumerable<TourPackage>
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="row">
+    <div class="col-12">
+        <h3 class="d-flex justify-content-center mt-4"><u>TourPackages</u></h3>
+        <div class="d-flex justify-content-end mb-1">
+            <a class="btn btn-outline-primary btn mb-1" asp-action="Create" asp-controller="TourPackages"> + Create New</a>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th class="text-center"><i class="bi bi-chevron-bar-expand"></i></th>
+                    <th></th>
+                    <th>PackageName</th>
+                    <th>Description</th>
+                    <th>Duration</th>
+                    <th>Destinations</th>
+                    <th>Price</th>
+                    <th>PackageType</th>
+                    <th>IsActive</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var p in Model)
+                {
+                    <tr>
+                        <td class="text-center" style="width:50px">
+                            <button type="button" class="btn btn-light btn-sm show-inventory"><i class="bi bi-chevron-right"></i></button>
+                            <button type="button" class="btn btn-light btn-sm hide-inventory" style="display:none"><i class="bi bi-chevron-down"></i></button>
+                        </td>
+                        <td><img src="~/Pictures/@p.Picture" class="rounded-circle" style="width:40px;" /></td>
+                        <td>@p.PackageName</td>
+                        <td>@p.Description</td>
+                        <td>@p.Duration</td>
+                        <td>@p.Destinations</td>
+                        <td>@p.Price</td>
+                        <td>@p.PackageType</td>
+                        <td>@p.IsActive</td>
+                        <td>
+                            <a class="btn btn-outline-success btn-sm" asp-action="Edit" asp-controller="TourPackages" asp-route-id="@p.TourPackageId"><i class="bi bi-pencil-square"></i></a>
+                            <button data-pk="@p.TourPackageId" type="button" class="btn btn-outline-danger btn-sm del"><i class="bi bi-trash"></i></button>
+                        </td>
+                    </tr>
+                    <tr style="display:none">
+                        <td class="border-end-0"></td>
+                        <td colspan="9" class="border-start-0">
+                            <h4 class="d-flex justify-content-center bg-secondary text-white flex-grow-1"><strong>Bookings</strong></h4>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>TravelerName</th>
+                                        <th>PhoneNumber</th>
+                                        <th>NumberOfTravelers</th>
+                                        <th>BookingDate</th>
+                                        <th>BookingStatus</th>
+                                        <th>
+                                            <a asp-action="Create" asp-controller="Bookings" asp-route-id="@p.TourPackageId" class="btn btn-outline-primary btn-sm">
+                                                <i class="bi bi-plus-circle"></i>
+                                            </a>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var s in p.Bookings)
+                                    {
+                                        <tr>
+                                            <td>@s.TravelerName</td>
+                                            <td>@s.PhoneNumber</td>
+                                            <td>@s.NumberOfTravelers</td>
+                                            <td>@s.BookingDate?.ToString("yyyy-MM-dd")</td>
+                                            <td>@s.BookingStatus</td>
+                                            <th>
+                                                <a class="btn btn-outline-success btn-sm" asp-action="Edit" asp-controller="Bookings" asp-route-id="@s.BookingId"><i class="bi bi-pencil-square"></i></a>
+                                                <button data-pk="@s.BookingId" type="button" class="btn btn-outline-danger btn-sm dels"><i class="bi bi-trash-fill"></i></button>
+                                            </th>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <div class="d-flex justify-content-between">
+            <div class="mb-2">
+                <button class="btn btn-secondary"><a asp-action="Index" asp-controller="Home" style="color:white; text-decoration:none;">Back to Home</a></button>
+            </div>
+            <div class="d-flex justify-content-center mb-2">
+                @Html.PagedListPager((IPagedList)Model, pg => Url.Action("Index", new { pg }), new PagedListRenderOptions
+                {
+                LiElementClasses = new string[] { "page-item" },
+                PageClasses = new string[] { "page-link" },
+                DisplayLinkToPreviousPage = PagedListDisplayMode.Always,
+                DisplayLinkToNextPage = PagedListDisplayMode.Always
+
+                })
+            </div>
+        </div>
+    </div>
+</div>
+@section styles
+    {
+    <link href="~/libs/icons/font/bootstrap-icons.css" rel="stylesheet" />
+
+}
+@section scripts
+    {
+    <script src="~/libs/jquery/jquery.js"></script>
+    <script>
+        $(".del").click(function () {
+            if (!confirm('Are you sure to delete?')) return;
+            var btn = $(this);
+            let id = $(this).data("pk");
+            $.ajax({
+                type: "post",
+                url: "/TourPackages/Delete/" + id,
+                dataType: "json",
+                success: r => {
+                    if (r.success == true) {
+                        var ptr = btn.closest("tr");
+                        var str = ptr.next();
+                        ptr.remove();
+                        str.remove();
+                    }
+                }
+            })
+        })
+        $(".dels").click(function () {
+            if (!confirm('Are you sure to delete?')) return;
+            var btn = $(this);
+            let id = $(this).data("pk");
+            $.ajax({
+                type: "post",
+                url: "/Bookings/Delete/" + id,
+                dataType: "json",
+                success: r => {
+                    if (r.success == true) {
+                        var ptr = btn.closest("tr");
+                        ptr.remove();
+                    }
+                }
+            })
+        });
+        $(".show-inventory").click(function () {
+            $(this).closest("tr").next().toggle();
+            $(this).toggle();
+            $(this).next().toggle();
+        });
+        $(".hide-inventory").click(function () {
+            $(this).closest("tr").next().toggle();
+            $(this).toggle();
+            $(this).prev().toggle();
+        });
+    </script>
+}

@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Grouping";
+}
+
+<div class="row">
+    <div class="col-12 d-flex align-items-center justify-content-center">
+        <!-- Center the buttons both horizontally and vertically -->
+        @using (Html.BeginForm())
+        {
+            <div class="btn-group-vertical" role="group" id="bn">
+                <button class="btn btn-primary my-button" type="submit" name="groupby" value="packagename">Group By Package Name</button>
+                <button class="btn btn-primary my-button" type="submit" name="groupby" value="year month">Group By Year, Month</button>
+                <button class="btn btn-primary my-button" type="submit" name="groupby" value="count">Group By Count</button>
+            </div>
+        }
+    </div>
+</div>
+
+@section styles
+{
+    <link href="~/wwwroot/libs/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <style>
+        .my-button {
+            margin: 10px 0;
+            transition: background-color 0.3s ease;
+            color: black;
+            background-color: lightgrey;
+            margin-top: 100px;
+        }
+
+        #bn{
+            margin-top:100px;
+            height:80px;
+        }
+    </style>
+}
+
+
+

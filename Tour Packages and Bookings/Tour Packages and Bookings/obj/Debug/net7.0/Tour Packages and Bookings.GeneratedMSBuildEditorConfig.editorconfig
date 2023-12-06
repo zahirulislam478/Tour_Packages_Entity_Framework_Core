@@ -1,0 +1,77 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Tour_Packages_and_Bookings
+build_property.RootNamespace = Tour_Packages_and_Bookings
+build_property.ProjectDir = C:\Users\Zahirul Islam\Desktop\C#.NET\Project\1273288\Tour Packages and Bookings\
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Zahirul Islam\Desktop\C#.NET\Project\1273288\Tour Packages and Bookings
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Zahirul Islam/Desktop/C\#.NET/Project/1273288/Tour Packages and Bookings/Views/Bookings/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ3NcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zahirul Islam/Desktop/C\#.NET/Project/1273288/Tour Packages and Bookings/Views/Bookings/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ3NcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zahirul Islam/Desktop/C\#.NET/Project/1273288/Tour Packages and Bookings/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zahirul Islam/Desktop/C\#.NET/Project/1273288/Tour Packages and Bookings/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zahirul Islam/Desktop/C\#.NET/Project/1273288/Tour Packages and Bookings/Views/TourPackages/Aggregates.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG91clBhY2thZ2VzXEFnZ3JlZ2F0ZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zahirul Islam/Desktop/C\#.NET/Project/1273288/Tour Packages and Bookings/Views/TourPackages/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG91clBhY2thZ2VzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zahirul Islam/Desktop/C\#.NET/Project/1273288/Tour Packages and Bookings/Views/TourPackages/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG91clBhY2thZ2VzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zahirul Islam/Desktop/C\#.NET/Project/1273288/Tour Packages and Bookings/Views/TourPackages/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG91clBhY2thZ2VzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zahirul Islam/Desktop/C\#.NET/Project/1273288/Tour Packages and Bookings/Views/TourPackages/Grouping.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG91clBhY2thZ2VzXEdyb3VwaW5nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zahirul Islam/Desktop/C\#.NET/Project/1273288/Tour Packages and Bookings/Views/TourPackages/GroupingResult.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG91clBhY2thZ2VzXEdyb3VwaW5nUmVzdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zahirul Islam/Desktop/C\#.NET/Project/1273288/Tour Packages and Bookings/Views/TourPackages/GroupingResultPrimitive.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG91clBhY2thZ2VzXEdyb3VwaW5nUmVzdWx0UHJpbWl0aXZlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zahirul Islam/Desktop/C\#.NET/Project/1273288/Tour Packages and Bookings/Views/TourPackages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG91clBhY2thZ2VzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zahirul Islam/Desktop/C\#.NET/Project/1273288/Tour Packages and Bookings/Views/TourPackages/_BookingsForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG91clBhY2thZ2VzXF9Cb29raW5nc0Zvcm0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zahirul Islam/Desktop/C\#.NET/Project/1273288/Tour Packages and Bookings/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Zahirul Islam/Desktop/C\#.NET/Project/1273288/Tour Packages and Bookings/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

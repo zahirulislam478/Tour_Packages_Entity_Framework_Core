@@ -1,0 +1,100 @@
+string sqlInsert =
+                @"CREATE PROCEDURE InsertTour 
+                    @packageName VARCHAR(50),
+                    @description VARCHAR(50),
+                    @duration INT,
+                    @destinations VARCHAR(50),
+                    @price MONEY,
+                    @picture VARCHAR(50),
+                    @packageType INT,
+                    @isActive BIT
+                AS
+                INSERT INTO TourPackages (PackageName, Description, Duration, Destinations, Price,Picture,PackageType,IsActive)
+                VALUES (@packageName, @description, @duration, @destinations, @price, @picture, @packageType, @isActive )
+                GO";
+            migrationBuilder.Sql(sqlInsert);
+            string sqlUpdate =
+                @"CREATE PROCEDURE UpdateTour
+                    @tourPackageId INT,
+                    @packageName VARCHAR(50),
+                    @description VARCHAR(50),
+                    @duration INT,
+                    @destinations VARCHAR(50),
+                    @price MONEY,
+                    @picture VARCHAR(50),
+                    @packageType INT,
+                    @isActive BIT
+                AS
+                Update TourPackages 
+                SET PackageName=@packageName, 
+                    Description=@description, 
+                    Duration=@duration, 
+                    Destinations=@destinations, 
+                    Price=@price,
+                    Picture=@picture,
+                    PackageType=@packageType,
+                    IsActive=@isActive
+                WHERE TourPackageId = @tourPackageId
+                GO";
+            migrationBuilder.Sql(sqlUpdate);
+
+            string sqlDelete =
+                @"CREATE PROCEDURE  DeleteTour 
+                    @tourPackageId INT
+                AS
+                DELETE  FROM  TourPackages 
+                WHERE TourPackageId = @tourPackageId
+                GO";
+            migrationBuilder.Sql(sqlDelete);
+
+            string sqlInsertBooking =
+                @"CREATE PROCEDURE InsertBooking
+                    @travelerName VARCHAR(255),
+                    @phoneNumber VARCHAR(100),
+                    @numberOfTravelers INT,
+                    @bookingDate DATE,
+                    @bookingStatus VARCHAR(100),
+                    @tourPackageId INT
+                AS
+                INSERT INTO Bookings (TravelerName, PhoneNumber, NumberOfTravelers, BookingDate, BookingStatus, TourPackageId)
+                VALUES (@travelerName, @phoneNumber, @numberOfTravelers, @bookingDate, @bookingStatus, @tourPackageId)
+                GO";
+            migrationBuilder.Sql(sqlInsertBooking);
+
+            string sqlUpdateBooking =
+                @"CREATE PROCEDURE UpdateBooking
+                    @bookingId INT,
+                    @travelerName VARCHAR(255),
+                    @phoneNumber VARCHAR(100),
+                    @numberOfTravelers INT,
+                    @bookingDate DATE,
+                    @bookingStatus VARCHAR(100),
+                    @tourPackageId INT
+                AS
+                UPDATE Bookings
+                SET TravelerName = @travelerName,
+                    PhoneNumber = @phoneNumber,
+                    NumberOfTravelers = @numberOfTravelers,
+                    BookingDate = @bookingDate,
+                    BookingStatus = @bookingStatus,
+                    TourPackageId = @tourPackageId
+                WHERE BookingId = @bookingId
+                GO";
+            migrationBuilder.Sql(sqlUpdateBooking);
+
+            string sqlDeleteBooking =
+                @"CREATE PROCEDURE DeleteBooking
+                    @bookingId INT
+                AS
+                DELETE FROM Bookings
+                WHERE BookingId = @bookingId
+                GO";
+            migrationBuilder.Sql(sqlDeleteBooking);
+
+
+	 migrationBuilder.Sql("DROP PROCEDURE InsertTour");
+            migrationBuilder.Sql("DROP PROCEDURE UpdateTour");
+            migrationBuilder.Sql("DROP PROCEDURE DeleteTour");
+            migrationBuilder.Sql("DROP PROCEDURE InsertBooking");
+            migrationBuilder.Sql("DROP PROCEDURE UpdateBooking");
+            migrationBuilder.Sql("DROP PROCEDURE DeleteBooking");

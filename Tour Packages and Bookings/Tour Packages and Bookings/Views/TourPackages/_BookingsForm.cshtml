@@ -1,0 +1,26 @@
+﻿@model Booking
+<tr>
+    <td>
+        <input type="text" asp-for="TravelerName" class="form-control form-control-sm" />
+        <span class="text-danger" asp-validation-for="TravelerName"></span>
+    </td>
+    <td>
+        <input type="text" asp-for="PhoneNumber" class="form-control form-control-sm" />
+        <span class="text-danger" asp-validation-for="PhoneNumber"></span>
+    </td>
+    <td>
+        <input type="text" asp-for="NumberOfTravelers" class="form-control form-control-sm" />
+        <span class="text-danger" asp-validation-for="NumberOfTravelers"></span>
+    </td>
+    <td>
+        <input type="date" asp-for="BookingDate" class="form-control form-control-sm" />
+        <span class="text-danger" asp-validation-for="BookingDate"></span>
+    </td>
+    <td>
+        <input type="text" asp-for="BookingStatus" class="form-control form-control-sm" />
+        <span class="text-danger" asp-validation-for="BookingStatus"></span>
+    </td>
+    <td>
+        <button type="button" class="btn btn-outline-danger btn-sm del">Remove</button>
+    </td>
+</tr>

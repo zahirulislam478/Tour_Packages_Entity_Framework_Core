@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="project-info-box">
+    <h2>Project Key Points</h2>
+    <div class="point">
+        <h3>Aggregates:</h3>
+        <ul>
+            <li>Display the total count, minimum, maximum, sum, and average for specific data fields.</li>
+            <li>Use tables for visual representation.</li>
+        </ul>
+    </div>
+    <div class="point">
+        <h3>Grouping:</h3>
+        <ul>
+            <li>Enable data grouping by attributes (e.g., price, number of travelers).</li>
+            <li>Organize and present grouped data effectively.</li>
+        </ul>
+    </div>
+    <div class="point">
+        <h3>Master-Details View:</h3>
+        <ul>
+            <li>Implement a master section for a list of items.</li>
+            <li>Selection reveals detailed information in a separate area.</li>
+        </ul>
+    </div>
+</div>
+
+@section styles
+{
+    <link href="~/wwwroot/libs/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <style>
+        .project-info-box {
+            border: 2px solid #333;
+            padding: 20px;
+            margin: 20px auto;
+            background-color: #f7f7f7;
+            border-radius: 10px;
+            text-align: left;
+            margin-top:40px;
+        }
+        .point {
+            margin-top: 10px;
+        }
+        h2 {
+            text-align: center;
+        }
+        h3 {
+            color: #333;
+        }
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        li {
+            margin: 5px 0;
+        }
+    </style>
+}
